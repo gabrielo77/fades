@@ -42,4 +42,7 @@ if project_basedir not in sys.path:
     sys.path.insert(0, project_basedir)
 
 from fades import main
-main.go(version, sys.argv)
+try:
+    main.go(version, sys.argv)
+except KeyboardInterrupt:
+    print("Exit fades")
